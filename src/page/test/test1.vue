@@ -1,8 +1,8 @@
 <template>
   <div id = "test1" >
-
-
-    <button type="button" class="btn btn-default" aria-label="Left Align">
+    <Header></Header>
+    <div class="mt60" >
+    <button type="button" class="btn btn-default " aria-label="Left Align">
       <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
     </button>
 
@@ -37,11 +37,17 @@
     <button @click="warn('Form cannot be submitted yet.', $event)">
       Submit
     </button>
+    </div>
   </div>
 </template>
 
 <script>
+  import Header from '../../components/header.vue'
+
   export default {
+    components: {
+      Header
+    },
     data () {
       return {
         dex: 30,
@@ -90,5 +96,9 @@
 <style>
 .form-control{
   width: 20%;
+}
+
+.mt60 {
+  margin-top: 60px;
 }
 </style>
