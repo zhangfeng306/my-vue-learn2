@@ -2,6 +2,8 @@
   <div>
     <span class="h3" > 子界面 &nbsp;&nbsp; {{mess}}</span>
      <labe class="col-sm-2 control-label">{{todo.text}}</labe>
+      <input v-model="mess1" class="form-control" > <br>
+      mess1: <label >{{mess1}}</label>
   </div>
 </template>
 
@@ -9,11 +11,8 @@
   export default {
     data () {
       return {
-        mess: '',
-        todo: {
-          text: '士大夫',
-          isComplete: false
-        }
+        mess1: this.mess,
+        todo: this.todo
       }
     },
 //    props: ['mess', 'todo']

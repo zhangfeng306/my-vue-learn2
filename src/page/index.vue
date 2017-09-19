@@ -3,9 +3,11 @@
     <Header></Header>
     <div class="container mt60">
       <input v-model="propsStr" placeholder="在我里面输入的数据会传递到子模块" class="form-control"> <br>
-      <Child :mess="propsStr" ></Child><br>
-      <Child mess="子页面数据传递props"></Child><br>
-      <Child  :todo="todo"></Child>
+      <Child :mess="propsStr"></Child>
+      <br>
+      <Child mess="子页面数据传递props"></Child>
+      <br>
+      <Child :todo="todo"></Child>
       <div class="row" v-for="i in list">
         <!--数据绑定动态获取父页面数据-->
         <!--  <Child :mess="$utils.goodTime(i.create_at)"></Child>-->
@@ -40,7 +42,7 @@
         list: [],
         propsStr: '父页面数据',
         todo: {
-          text: 'Learn Vue',
+          text: 'Learn Vue1',
           isComplete: false
         }
       }
@@ -59,9 +61,10 @@
 </script>
 
 <style>
-  .form-control{
+  .form-control {
     width: 30%
   }
+
   .mt60 {
     margin-top: 60px;
   }
