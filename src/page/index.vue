@@ -61,9 +61,7 @@
 </script>
 
 <style>
-  .form-control {
-    width: 30%
-  }
+
 
   .mt60 {
     margin-top: 60px;

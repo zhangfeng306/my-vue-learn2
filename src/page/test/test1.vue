@@ -2,10 +2,14 @@
   <div id = "test1" >
     <Header></Header>
     <div class="mt60" >
+
     <button type="button" class="btn btn-default " aria-label="Left Align">
       <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
     </button>
 
+    <div class="btn-group btn-group-sm">
+      btn
+    </div>
     <button type="button" class="btn btn-default btn-lg" @click="btClick" >
       <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
     </button>
