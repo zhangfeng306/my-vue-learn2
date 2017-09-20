@@ -8,6 +8,11 @@
       <Child mess="子页面数据传递props"></Child>
       <br>
       <Child :todo="todo"></Child>
+      <br>
+      <p class="">{{ total }}</p>
+      <child @increment1="incrementTotal"></child>
+      <child @increment="incrementTotal"></child>
+
       <div class="row" v-for="i in list">
         <!--数据绑定动态获取父页面数据-->
         <!--  <Child :mess="$utils.goodTime(i.create_at)"></Child>-->
@@ -27,6 +32,8 @@
   </div>
 </template>
 <script>
+  /* eslint-disable key-spacing */
+
   import Header from '../components/header.vue'
   import Footer from '../components/footer.vue'
   import Child from '../components/child.vue'
@@ -44,7 +51,8 @@
         todo: {
           text: 'Learn Vue1',
           isComplete: false
-        }
+        },
+        total: 0
       }
     },
     created () {
@@ -52,9 +60,12 @@
     },
     methods: {
       getData () {
-        this.$api.get('topics', null, r => {
+        this.$api.get('topics', {limit: 5}, r => {
           this.list = r.data
         })
+      },
+      incrementTotal: function () {
+        this.total += 1
       }
     }
   }

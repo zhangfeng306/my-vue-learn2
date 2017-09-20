@@ -1,9 +1,10 @@
 <template>
   <div>
-    <span class="h3" > 子界面 &nbsp;&nbsp; {{mess}}</span>
-     <labe class="col-sm-2 control-label">{{todo.text}}</labe>
-      <input v-model="mess1" class="form-control" > <br>
-      mess1: <label >{{mess1}}</label>
+    <span class="h3"> 子界面 &nbsp;&nbsp; {{mess}}</span>
+    <labe class="col-sm-2 control-label">{{todo.text}}</labe>
+ <!--   <input v-model="mess1" class="form-control"> <br>-->
+    mess1: <label>{{mess1}}</label>
+    <button  @click="incrementCounter">{{ counter }}</button>
   </div>
 </template>
 
@@ -12,7 +13,14 @@
     data () {
       return {
         mess1: this.mess,
-        todo: this.todo
+        todo: this.todo,
+        counter: 0
+      }
+    },
+    methods: {
+      incrementCounter: function () {
+        this.counter += 1
+        this.$emit('increment1')
       }
     },
 //    props: ['mess', 'todo']
@@ -23,9 +31,11 @@
       },
       todo: {
         type: Object,
-        default: {
-          text: '士大夫',
-          isComplete: false
+        default: function () {
+          return {
+            text: '士大夫',
+            isComplete: false
+          }
         }
       }
     }
