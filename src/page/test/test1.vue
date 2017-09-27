@@ -1,6 +1,6 @@
 <template>
   <div id="test1">
-    <Header></Header>
+    <Top></Top>
     <div class="mt60">
       <button type="button" class="btn btn-default " aria-label="Left Align">
         <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
@@ -42,11 +42,11 @@
 </template>
 
 <script>
-  import Header from '../../components/header.vue'
+  import Top from '../../components/header.vue'
 
   export default {
     components: {
-      Header
+      Top
     },
     data () {
       return {
@@ -94,11 +94,11 @@
 </script>
 
 <style>
-.form-control{
-  width: 20%;
-}
+  .form-control {
+    width: 20%;
+  }
 
-.mt60 {
-  margin-top: 60px;
-}
+  .mt60 {
+    margin-top: 60px;
+  }
 </style>

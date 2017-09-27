@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <Top></Top>
     <div class="container mt60">
       <input v-model="propsStr" placeholder="在我里面输入的数据会传递到子模块" class="form-control"> <br>
       <Child :mess="propsStr"></Child>
@@ -9,9 +9,9 @@
       <br>
       <Child :todo="todo"></Child>
       <br>
-      <p class="">{{ total }}</p>
-      <child @increment1="incrementTotal"></child>
-      <child @increment="incrementTotal"></child>
+      <p >{{ total }}</p>
+      <Child @increment1="incrementTotal"></Child>
+      <Child @increment="incrementTotal"></Child>
 
       <div class="row" v-for="i in list">
         <!--数据绑定动态获取父页面数据-->
@@ -28,20 +28,20 @@
 
     </div>
 
-    <Footer></Footer>
+    <MyFooter></MyFooter>
   </div>
 </template>
 <script>
   /* eslint-disable key-spacing */
 
-  import Header from '../components/header.vue'
-  import Footer from '../components/footer.vue'
+  import Top from '../components/header.vue'
+  import MyFooter from '../components/footer.vue'
   import Child from '../components/child.vue'
 
   export default {
     components: {
-      Header,
-      Footer,
+      Top,
+      MyFooter,
       Child
     },
     data () {
